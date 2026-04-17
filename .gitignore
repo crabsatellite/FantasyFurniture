@@ -27,3 +27,9 @@ run
 
 # Ignore compiled jars
 jars
+
+# Runtime logs
+*.log
+
+# Stray decompiled vanilla sources (not part of this repo)
+/net/

@@ -1,0 +1,9 @@
+{
+    "required": true,
+    "package": "xyz.apex.minecraft.fantasyfurniture.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [],
+    "client": [],
+    "server": [],
+    "minVersion": "0.8.5"
+}

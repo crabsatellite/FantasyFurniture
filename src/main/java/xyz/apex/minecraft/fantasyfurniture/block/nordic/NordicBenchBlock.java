@@ -1,0 +1,120 @@
+package xyz.apex.minecraft.fantasyfurniture.block.nordic;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import xyz.apex.minecraft.fantasyfurniture.block.SeatFurnitureBlock;
+import xyz.apex.minecraft.fantasyfurniture.util.MultiBlockUtil;
+import xyz.apex.minecraft.fantasyfurniture.util.MultiBlockUtil.MultiBlockType;
+import xyz.apex.minecraft.fantasyfurniture.util.VoxelShapeHelper;
+
+import javax.annotation.Nullable;
+import java.util.Map;
+
+import static net.minecraft.world.level.block.Block.box;
+
+public class NordicBenchBlock extends SeatFurnitureBlock {
+    public static final MultiBlockType MULTI_BLOCK_TYPE = MultiBlockType.MB_2x1x1;
+    public static final IntegerProperty PART = MULTI_BLOCK_TYPE.getPartProperty();
+
+    // PART=0 (origin, right block): legacy benchShape elements with positive X (right half).
+    // Seat rail box(-15,5,2,15,7,14) spans both blocks; origin gets x=0..15.
+    private static final VoxelShape SHAPE = VoxelShapeHelper.combine(
+            box(12, 0, 2, 14, 3, 4),
+            box(12, 0, 12, 14, 3, 14),
+            box(12, 3, 11.5, 14, 5, 13.5),
+            box(12, 3, 2.5, 14, 5, 4.5),
+            box(12.5, 3.5, 4.5, 13.5, 4.5, 11.5),
+            box(0, 5, 2, 15, 7, 14)
+    );
+    private static final Map<Direction, VoxelShape> SHAPES = VoxelShapeHelper.rotateHorizontal(SHAPE);
+
+    // PART=1 (left block): legacy negative-X elements translated +16.
+    // Seat rail x=-15..0 → 1..16 in this block.
+    private static final VoxelShape SHAPE_PART1 = VoxelShapeHelper.combine(
+            box(2, 0, 2, 4, 3, 4),
+            box(2, 0, 12, 4, 3, 14),
+            box(2, 3, 2.5, 4, 5, 4.5),
+            box(2, 3, 11.5, 4, 5, 13.5),
+            box(2.5, 3.5, 4.5, 3.5, 4.5, 11.5),
+            box(1, 5, 2, 16, 7, 14)
+    );
+    private static final Map<Direction, VoxelShape> SHAPES_PART1 = VoxelShapeHelper.rotateHorizontal(SHAPE_PART1);
+
+    public NordicBenchBlock(Properties properties) {
+        super(properties);
+
+        registerDefaultState(defaultBlockState().setValue(PART, 0));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
+        builder.add(PART);
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        BlockState state = super.getStateForPlacement(context);
+        if (state == null) return null;
+
+        BlockPos pos = context.getClickedPos();
+        Direction facing = state.getValue(FACING);
+        Level level = context.getLevel();
+
+        if (!MultiBlockUtil.canPlace(level, pos, facing, MULTI_BLOCK_TYPE)) {
+            return null;
+        }
+
+        return state.setValue(PART, 0);
+    }
+
+    @Override
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        super.onPlace(state, level, pos, oldState, movedByPiston);
+
+        if (!level.isClientSide() && state.getValue(PART) == 0 && !oldState.is(this)) {
+            MultiBlockUtil.placeMultiBlock(level, pos, state, state.getValue(FACING), MULTI_BLOCK_TYPE);
+        }
+    }
+
+    @Override
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!newState.is(this)) {
+            MultiBlockUtil.removeMultiBlock(level, pos, state, MULTI_BLOCK_TYPE);
+        }
+
+        super.onRemove(state, level, pos, newState, movedByPiston);
+    }
+
+    @Override
+    protected boolean isMultiBlockOrigin(BlockState state) {
+        return state.getValue(PART) == 0;
+    }
+
+    @Override
+    protected BlockPos getOriginPos(BlockState state, BlockPos pos) {
+        return MULTI_BLOCK_TYPE.getOriginFromPart(pos, state.getValue(FACING), state.getValue(PART));
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        Direction facing = state.getValue(FACING);
+        int part = state.getValue(PART);
+
+        if (part == 0) {
+            return SHAPES.getOrDefault(facing, SHAPE);
+        }
+
+        return SHAPES_PART1.getOrDefault(facing, SHAPE_PART1);
+    }
+}

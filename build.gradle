@@ -1,456 +1,116 @@
 plugins {
-	// id 'net.neoforged.gradle' version '[6.0.18,6.2)' apply false
-	id 'net.minecraftforge.gradle' version '[6.0,6.2)' apply false
-	id 'org.parchmentmc.librarian.forgegradle' version '1.+' apply false
-	id 'org.spongepowered.mixin' version '0.7.+' apply false
-	id 'fabric-loom' version '1.3-SNAPSHOT' apply false
-
-	id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1'
-
-	id 'com.palantir.git-version' version '1.0.0' apply false
-	id 'me.modmuss50.mod-publish-plugin' version '0.3.+' apply false
-	id 'net.neoforged.gradleutils' version '2.+' apply false
+    id 'java-library'
+    id 'idea'
+    id 'net.neoforged.moddev' version '1.0.0'
 }
 
-apply plugin: 'com.palantir.git-version'
-def repo = versionDetails()
+version = "${minecraft_version}-${mod_version}"
+group = mod_group
 
-project.ext {
-	MOD_FULL_VERSION = "${MOD_VERSION}.${repo.commitDistance}"
+base {
+    archivesName = mod_name
 }
 
-allprojects {
-	tasks.register('collectJars', Copy) {
-		into rootProject.file('jars')
-	}
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'fml.earlyprogresswindow', 'false'
+            jvmArgument '-Dfml.earlyprogresswindow=false'
+        }
+
+        server {
+            server()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all',
+                    '--output', file('src/generated/resources/').getAbsolutePath(),
+                    '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+
+    unitTest {
+        enable()
+        testedMod = mods.named("${mod_id}")
+    }
 }
 
-// register so that can be referenced in subProjects { }
-tasks.register('generateChangelogs')
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-subprojects {
-	apply plugin: 'java-library'
-	apply plugin: 'idea'
-	apply plugin: 'maven-publish'
-
-	group = "${MOD_GROUP}"
-	version = "${MOD_FULL_VERSION}+${MINECRAFT_VERSION}"
-	archivesBaseName = "${MOD_ID}-${project.name}"
-
-	sourceSets {
-		main.resources.srcDirs += [ 'src/generated/resources' ]
-
-		test {
-			java.srcDirs = [ ]
-			resources.srcDirs = [ ]
-		}
-
-		generated
-	}
-
-	repositories {
-		mavenLocal()
-		maven { url 'https://maven.covers1624.net/' }
-
-		maven {
-			url 'https://maven.parchmentmc.org'
-			content {
-				includeGroupByRegex 'org\\.parchmentmc.*'
-			}
-		}
-
-		maven {
-			url 'https://www.cursemaven.com'
-			content {
-				includeGroup 'curse.maven'
-			}
-		}
-
-		maven {
-			url 'https://api.modrinth.com/maven'
-			content {
-				includeGroup 'maven.modrinth'
-			}
-		}
-
-		maven {
-			url 'https://maven.blamejared.com/'
-			content {
-				includeGroup 'mezz.jei'
-			}
-		}
-
-		maven {
-			url 'https://maven.architectury.dev/'
-			content {
-				includeGroup 'dev.architectury'
-			}
-		}
-
-		maven {
-			url 'https://maven.shedaniel.me/'
-			content {
-				includeGroupByRegex 'me\\.shedaniel.*'
-			}
-		}
-	}
-
-	dependencies {
-
-	}
-
-	processResources {
-		dependsOn rootProject.tasks.generateChangelogs
-
-		project.properties.each {
-			inputs.property "${it.key}", "${it.value}"
-		}
-
-		filesMatching([ '*.mixins.json', 'pack.mcmeta', 'META-INF/mods.toml', 'fabric.mod.json' ]) {
-			expand project.properties
-		}
-
-		from rootProject.file('changelogs/changelog.md')
-		from rootProject.file('LICENSE')
-		from rootProject.file('README.MD')
-	}
-
-	java {
-		toolchain {
-			languageVersion.set(JavaLanguageVersion.of("${JAVA_VERSION}"))
-		}
-
-		withSourcesJar()
-	}
-
-	tasks.withType(JavaCompile).configureEach {
-		options.encoding = 'UTF-8'
-		options.release.set(JavaLanguageVersion.of("${JAVA_VERSION}").asInt())
-
-		javaToolchains {
-			compilerFor {
-				languageVersion.set(JavaLanguageVersion.of("${JAVA_VERSION}"))
-			}
-		}
-	}
-
-	jar {
-		manifest {
-			attributes([
-					'Specification-Title': "${MOD_ID}",
-					'Specification-Vendor': 'ApexStudios',
-					'Specification-Version': "${MINECRAFT_VERSION}",
-					'Implementation-Title': "${project.name}",
-					'Implementation-Version': "${project.version}",
-					'Implementation-Vendor': 'ApexStudios',
-					'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-			])
-		}
-	}
-
-	artifacts {
-		archives jar
-		archives sourcesJar
-	}
-
-	publishing {
-		publications {
-			release(MavenPublication) {
-				groupId = "${project.group}"
-				artifactId = "${project.archivesBaseName}"
-				version = "${project.version}"
-			}
-		}
-
-		repositories {
-			if(providers.environmentVariable('MAVEN_PASSWORD').isPresent()) {
-				maven {
-					name 'releases'
-					url 'https://nexus.covers1624.net/repository/apex-releases/'
-
-					credentials {
-						username 'apex'
-						password providers.environmentVariable('MAVEN_PASSWORD').get()
-					}
-				}
-			}
-		}
-	}
-
-	idea.module {
-		excludeDirs += [
-				file('run')
-		]
-	}
+repositories {
+    maven {
+        name = "ParchmentMC"
+        url = "https://maven.parchmentmc.org"
+        content {
+            includeGroupByRegex 'org\\.parchmentmc.*'
+        }
+    }
 }
 
-apply plugin: 'net.neoforged.gradleutils'
-apply plugin: 'me.modmuss50.mod-publish-plugin'
-
-afterEvaluate {
-	tasks.setupTeamCityProject.enabled = false
-	tasks.findByName('configureTeamCity')??.enabled = false
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-tasks.register('generateChangelogTxt', net.minecraftforge.gradleutils.tasks.GenerateChangelogTask) {
-	outputFile = file('changelogs/changelog.txt')
-	startingTag = "${MOD_VERSION_TAG}"
+test {
+    useJUnitPlatform()
 }
 
-tasks.register('generateChangelogMd', net.minecraftforge.gradleutils.tasks.GenerateChangelogTask) {
-	buildMarkdown = true
-	outputFile = file('changelogs/changelog.md')
-	startingTag = "${MOD_VERSION_TAG}"
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            neo_version_range      : neo_version_range,
+            loader_version_range   : loader_version_range,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
+    }
 }
 
-generateChangelogs.dependsOn generateChangelogTxt, generateChangelogMd
-
-tasks.register('sendDiscordChangelog') {
-	doLast {
-		if(providers.environmentVariable('DISCORD_CHANGELOG_WEBHOOK_URL').isPresent()) {
-			// cause using emojis from different discord guilds
-			// is a nitro feature and webhooks dont have nitro
-			def emojis = [
-					// ApexStudios
-					'modrinth': '<:modrinth:1087664953235869696>',
-					'curseforge': '<:curseforge:1087664975121752085>',
-					'minecraft': '<:minecraft:1087669093974421544>',
-					'mcforge': '<:forge:1087669091487195205>',
-					'neoforge': '<:neoforge:1138457156757241918>',
-					'fabric': '<:fabric:1107901914923925585>',
-					'github': '<:github:1087671203642216521>',
-					'apexcore': '<:apexcore:963684084448653332>',
-
-					// Test Server
-					/*'modrinth': '<:modrinth:1087665302067740722>',
-                    'curseforge': '<:curseforge:1087665287186366504>',
-                    'minecraft': '<:minecraft:1087667250565226536>',
-                    'mcforge': '<:forge:1087667248371605524>',
-                    'neoforge': '<:neoforge:1138456184618242189>',
-                    'fabric': '<:fabric:1138459723314769950>',
-                    'github': '<:github:1087671103360614400>',
-                    'apexcore': '<:apexcore:1161106353381720095>',*/
-			]
-
-			def fields = [
-					[
-							name: "${emojis['minecraft']} Minecraft",
-							value: "[${MINECRAFT_VERSION}](https://minecraft.net/)",
-							inline: true
-					]
-			]
-
-			if(findProject(':fabric') != null) {
-				fields.add([
-						name: "${emojis['fabric']} Fabric",
-						value: "[${FABRIC_API_VERSION}](https://fabricmc.net/use/installer/)",
-						inline: true
-				])
-			}
-
-			if(findProject(':neoforge') != null) {
-				fields.add([
-						name: "${emojis['neoforge']} NeoForge",
-						value: "[${NEOFORGE_VERSION}](https://neoforged.net/)",
-						inline: true
-				])
-			}
-
-			if(findProject(':mcforge') != null) {
-				fields.add([
-						name: "${emojis['mcforge']} MinecraftForge",
-						value: "[${MCFORGE_VERSION}](https://files.minecraftforge.net/net/minecraftforge/forge/index_${MINECRAFT_VERSION}.html)",
-						inline: true
-				])
-			}
-
-			fields.add([
-					name: "${emojis['apexcore']} ApexCore",
-					value: "[${APEXCORE_VERSION}](https://modrinth.com/mod/apexcore)",
-					inline: true
-			])
-
-			def body = [
-					username: 'ApexStudios',
-					avatar_url: 'https://raw.githubusercontent.com/ApexStudios-Dev/.github/master/assets/apexstudios/Logo.png',
-					embeds: [
-							[
-									title: "**${MOD_NAME}** updated to **_v${MOD_FULL_VERSION}_**!",
-									description: "[For full changelog see here](https://updates.apexstudios.dev/${MOD_ID}/${MOD_FULL_VERSION}+${MINECRAFT_VERSION})\n\n**Download**: [${emojis['modrinth']} **_Modrinth_**](https://modrinth.com/mod/${MOD_MODRINTH_SLUG}) | [${emojis['curseforge']} **_Curseforge_**](https://www.curseforge.com/minecraft/mc-mods/${MOD_CUSRSEFORGE_SLUG})",
-									url: "https://updates.apexstudios.dev/${MOD_ID}/${MOD_FULL_VERSION}+${MINECRAFT_VERSION}",
-									color: "${Integer.decode(MOD_COLOR)}",
-									footer: [
-											text: 'ApexStudios',
-											icon_url: 'https://raw.githubusercontent.com/ApexStudios-Dev/.github/master/assets/apexstudios/Logo.png',
-									],
-									author: [
-											name: "${MOD_NAME}",
-											url: "https://updates.apexstudios.dev/${MOD_ID}/${MOD_FULL_VERSION}+${MINECRAFT_VERSION}",
-											icon_url: "https://raw.githubusercontent.com/ApexStudios-Dev/.github/master/assets/minecraft/${MOD_ID}_logo.png"
-									],
-									fields: fields
-							]
-					]
-			]
-
-			HttpURLConnection req = new URL(providers.environmentVariable('DISCORD_CHANGELOG_WEBHOOK_URL').get()).openConnection()
-			req.setRequestMethod('POST')
-			req.setRequestProperty('Content-Type', 'application/json; charset=UTF-8')
-			req.setDoOutput(true)
-			req.getOutputStream().write(groovy.json.JsonOutput.toJson(body).getBytes('UTF-8'))
-			// read the response, without this, webhook wont actually be sent
-			// we should maybe, perhaps, handle any errors that could occur, or at least log them
-			println "[Discord-Changelog] Received response: ${req.responseMessage} (${req.responseCode})"
-		} else {
-			println '[Discord-Changelog] Missing required "DISCORD_CHANGELOG_WEBHOOK_URL" Environment Variable!!!'
-		}
-	}
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }
 
-tasks.register('publishChangelogFile') {
-	dependsOn tasks.generateChangelogs
-
-	doLast {
-		if(providers.environmentVariable('APEXSTUDIOS_CHANGELOG_SERVER_KEY').isPresent()) {
-			def changelogLines = file('changelogs/changelog.txt').text.split('\n').drop(1).join('\n')
-			def url = "https://updates.apexstudios.dev/${MOD_ID}/${MOD_FULL_VERSION}+${MINECRAFT_VERSION}"
-			println "[Changelog-Server] Publishing changelog to: ${url}"
-
-			HttpURLConnection req = new URL(url).openConnection()
-			req.setRequestMethod('PUT')
-			req.setRequestProperty('Content-Type', 'text/plain; charset=UTF-8')
-			req.setRequestProperty('X-Api-Key', providers.environmentVariable('APEXSTUDIOS_CHANGELOG_SERVER_KEY').get())
-			req.setDoOutput(true)
-			req.getOutputStream().write(changelogLines.getBytes('UTF-8'))
-			// read the response, without this, webhook wont actually be sent
-			// we should maybe, perhaps, handle any errors that could occur, or at least log them
-			println "[Changelog-Server] Received response: ${req.responseMessage} (${req.responseCode})"
-		} else {
-			println '[Changelog-Server] Missing required "APEXSTUDIOS_CHANGELOG_SERVER_KEY" Environment Variable!!!'
-		}
-	}
-}
-
-publishMods {
-	evaluationDependsOn(':complete-fabric')
-	evaluationDependsOn(':complete-mcforge')
-	evaluationDependsOn(':fabric')
-	evaluationDependsOn(':mcforge')
-
-	def fabricJar = project(':complete-fabric').tasks.remapJar.archiveFile
-	def fabricJars = [
-			project(':fabric').tasks.remapSourcesJar.archiveFile,
-			project(':complete-fabric').tasks.remapSourcesJar.archiveFile
-	]
-
-	def mcforgeJar = project(':complete-mcforge').tasks.jarJar.archiveFile
-	def mcforgeJars = [
-			project(':mcforge').tasks.jar.archiveFile,
-			project(':mcforge').tasks.sourcesJar.archiveFile,
-			project(':complete-mcforge').tasks.jar.archiveFile,
-			project(':complete-mcforge').tasks.sourcesJar.archiveFile
-	]
-
-	if(findProject(':nordic-fabric') != null) {
-		evaluationDependsOn(':nordic-fabric')
-		fabricJars += [
-				project(':nordic-fabric').tasks.remapJar.archiveFile,
-				project(':nordic-fabric').tasks.remapSourcesJar.archiveFile
-		]
-	}
-
-	if(findProject(':nordic-mcforge') != null) {
-		evaluationDependsOn(':nordic-mcforge')
-		mcforgeJars += [
-				project(':nordic-mcforge').tasks.jar.archiveFile,
-				project(':nordic-mcforge').tasks.jarJar.archiveFile,
-				project(':nordic-mcforge').tasks.sourcesJar.archiveFile
-		]
-	}
-
-	changelog = file('changelogs/changelog.md').exists() ? file('changelogs/changelog.md').getText('UTF-8') : ''
-	type = me.modmuss50.mpp.ReleaseType.of("${MOD_RELEASE_TYPE}")
-	maxRetries = 5
-	version = "${MOD_FULL_VERSION}"
-	dryRun = !providers.environmentVariable('MODRINTH_TOKEN').isPresent() || !providers.environmentVariable('CURSEFORGE_TOKEN').isPresent()
-
-	// fabric
-	curseforge('curseforgeFabric') {
-		minecraftVersions.add("${MINECRAFT_VERSION}")
-		projectId = "${MOD_CURSEFORGE_ID}"
-		accessToken = providers.environmentVariable('CURSEFORGE_TOKEN').getOrNull()
-		file = fabricJar
-		displayName = "[Fabric] ${MOD_NAME} - ${MOD_FULL_VERSION}+${MINECRAFT_VERSION}"
-		modLoaders.add('fabric')
-		additionalFiles.from(fabricJars)
-
-		requires {
-			slug = "${APEXCORE_CURSEFORGE_SLUG}"
-		}
-
-		requires {
-			slug = "${FABRIC_CURSEFORGE_SLUG}"
-		}
-	}
-
-	modrinth('modrinthFabric') {
-		minecraftVersions.add("${MINECRAFT_VERSION}")
-		projectId = "${MOD_MODRINTH_ID}"
-		accessToken = providers.environmentVariable('MODRINTH_TOKEN').getOrNull()
-		file = fabricJar
-		displayName = "[Fabric] ${MOD_NAME} - ${MOD_FULL_VERSION}+${MINECRAFT_VERSION}"
-		modLoaders.add('fabric')
-		additionalFiles.from(fabricJars)
-
-		requires {
-			slug = "${APEXCORE_CURSEFORGE_SLUG}"
-		}
-
-		requires {
-			slug = "${FABRIC_CURSEFORGE_SLUG}"
-		}
-	}
-
-	// forge
-	curseforge('curseforgeMCForge') {
-		minecraftVersions.add("${MINECRAFT_VERSION}")
-		projectId = "${MOD_CURSEFORGE_ID}"
-		accessToken = providers.environmentVariable('CURSEFORGE_TOKEN').getOrNull()
-		file = mcforgeJar
-		displayName = "[MinecraftForge] ${MOD_NAME} - ${MOD_FULL_VERSION}+${MINECRAFT_VERSION}"
-		modLoaders.add('forge')
-		additionalFiles.from(mcforgeJars)
-
-		requires {
-			slug = "${APEXCORE_CURSEFORGE_SLUG}"
-		}
-	}
-
-	modrinth('modrinthMCForge') {
-		minecraftVersions.add("${MINECRAFT_VERSION}")
-		projectId = "${MOD_MODRINTH_ID}"
-		accessToken = providers.environmentVariable('MODRINTH_TOKEN').getOrNull()
-		file = mcforgeJar
-		displayName = "[MinecraftForge] ${MOD_NAME} - ${MOD_FULL_VERSION}+${MINECRAFT_VERSION}"
-		modLoaders.add('forge')
-		additionalFiles.from(mcforgeJars)
-
-		requires {
-			slug = "${APEXCORE_CURSEFORGE_SLUG}"
-		}
-	}
-}
-
-idea.module {
-	excludeDirs += [
-			file('.idea'),
-			file('.gradle'),
-			file('gradle')
-	]
-
-	[ 'fabric', 'neoforge', 'mcforge' ].forEach {
-		if(findProject(":${it}") == null) {
-			excludeDirs += [ file("projects/complete/${it}"), file("projects/modules/nordic/${it}"), file("projects/platforms/${it}") ]
-		}
-	}
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
 }

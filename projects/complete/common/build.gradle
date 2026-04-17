@@ -1,9 +1,0 @@
-apply from: rootProject.file('scripts/common.gradle')
-
-dependencies {
-    compileOnly project(path: ':common', configuration: 'namedElements')
-
-    if(findProject(':nordic-common') != null) {
-        compileOnly project(path: ':nordic-common', configuration: 'namedElements')
-    }
-}
