@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "connection=corner,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/counter_corner",
+      "y": 90
+    },
+    "connection=corner,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/counter_corner",
+      "y": 90
+    },
+    "connection=corner,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/counter_corner"
+    },
+    "connection=corner,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/counter_corner"
+    },
+    "connection=corner,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/counter_corner",
+      "y": 180
+    },
+    "connection=corner,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/counter_corner",
+      "y": 180
+    },
+    "connection=corner,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/counter_corner",
+      "y": 270
+    },
+    "connection=corner,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/counter_corner",
+      "y": 270
+    },
+    "connection=single,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/counter_single",
+      "y": 90
+    },
+    "connection=single,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/counter_single",
+      "y": 90
+    },
+    "connection=single,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/counter_single"
+    },
+    "connection=single,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/counter_single"
+    },
+    "connection=single,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/counter_single",
+      "y": 180
+    },
+    "connection=single,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/counter_single",
+      "y": 180
+    },
+    "connection=single,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/counter_single",
+      "y": 270
+    },
+    "connection=single,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/counter_single",
+      "y": 270
+    }
+  }
+}

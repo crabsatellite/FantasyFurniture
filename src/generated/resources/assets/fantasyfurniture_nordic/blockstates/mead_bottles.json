@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "bottles=0,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_0",
+      "y": 90
+    },
+    "bottles=0,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_0",
+      "y": 90
+    },
+    "bottles=0,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_0"
+    },
+    "bottles=0,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_0"
+    },
+    "bottles=0,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_0",
+      "y": 180
+    },
+    "bottles=0,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_0",
+      "y": 180
+    },
+    "bottles=0,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_0",
+      "y": 270
+    },
+    "bottles=0,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_0",
+      "y": 270
+    },
+    "bottles=1,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_1",
+      "y": 90
+    },
+    "bottles=1,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_1",
+      "y": 90
+    },
+    "bottles=1,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_1"
+    },
+    "bottles=1,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_1"
+    },
+    "bottles=1,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_1",
+      "y": 180
+    },
+    "bottles=1,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_1",
+      "y": 180
+    },
+    "bottles=1,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_1",
+      "y": 270
+    },
+    "bottles=1,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_1",
+      "y": 270
+    },
+    "bottles=2,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_2",
+      "y": 90
+    },
+    "bottles=2,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_2",
+      "y": 90
+    },
+    "bottles=2,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_2"
+    },
+    "bottles=2,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_2"
+    },
+    "bottles=2,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_2",
+      "y": 180
+    },
+    "bottles=2,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_2",
+      "y": 180
+    },
+    "bottles=2,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_2",
+      "y": 270
+    },
+    "bottles=2,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/decorations/mead_bottles_2",
+      "y": 270
+    }
+  }
+}

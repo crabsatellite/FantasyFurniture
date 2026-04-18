@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_venthyr:block/decorations/widow_bloom"
+    },
+    "facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_venthyr:block/decorations/widow_bloom"
+    },
+    "facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_venthyr:block/decorations/widow_bloom"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_venthyr:block/decorations/widow_bloom"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_venthyr:block/decorations/widow_bloom"
+    },
+    "facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_venthyr:block/decorations/widow_bloom"
+    },
+    "facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_venthyr:block/decorations/widow_bloom"
+    },
+    "facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_venthyr:block/decorations/widow_bloom"
+    }
+  }
+}

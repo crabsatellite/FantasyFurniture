@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "connection=center,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_center",
+      "y": 90
+    },
+    "connection=center,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_center",
+      "y": 90
+    },
+    "connection=center,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_center"
+    },
+    "connection=center,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_center"
+    },
+    "connection=center,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_center",
+      "y": 180
+    },
+    "connection=center,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_center",
+      "y": 180
+    },
+    "connection=center,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_center",
+      "y": 270
+    },
+    "connection=center,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_center",
+      "y": 270
+    },
+    "connection=left,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_left",
+      "y": 90
+    },
+    "connection=left,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_left",
+      "y": 90
+    },
+    "connection=left,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_left"
+    },
+    "connection=left,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_left"
+    },
+    "connection=left,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_left",
+      "y": 180
+    },
+    "connection=left,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_left",
+      "y": 180
+    },
+    "connection=left,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_left",
+      "y": 270
+    },
+    "connection=left,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_left",
+      "y": 270
+    },
+    "connection=right,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_right",
+      "y": 90
+    },
+    "connection=right,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_right",
+      "y": 90
+    },
+    "connection=right,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_right"
+    },
+    "connection=right,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_right"
+    },
+    "connection=right,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_right",
+      "y": 180
+    },
+    "connection=right,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_right",
+      "y": 180
+    },
+    "connection=right,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_right",
+      "y": 270
+    },
+    "connection=right,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_right",
+      "y": 270
+    },
+    "connection=single,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_single",
+      "y": 90
+    },
+    "connection=single,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_single",
+      "y": 90
+    },
+    "connection=single,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_single"
+    },
+    "connection=single,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_single"
+    },
+    "connection=single,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_single",
+      "y": 180
+    },
+    "connection=single,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_single",
+      "y": 180
+    },
+    "connection=single,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_necrolord:block/shelf_single",
+      "y": 270
+    },
+    "connection=single,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_necrolord:block/shelf_single",
+      "y": 270
+    }
+  }
+}

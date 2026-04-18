@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "east=false,north=false,south=false,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=false,south=false,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=false,south=false,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=false,south=false,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=false,south=true,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=false,south=true,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=false,south=true,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=false,south=true,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=true,south=false,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=true,south=false,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=true,south=false,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=true,south=false,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=true,south=true,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=true,south=true,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=true,south=true,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=false,north=true,south=true,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=false,south=false,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=false,south=false,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=false,south=false,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=false,south=false,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=false,south=true,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=false,south=true,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=false,south=true,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=false,south=true,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=true,south=false,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=true,south=false,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=true,south=false,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=true,south=false,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=true,south=true,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=true,south=true,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=true,south=true,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    },
+    "east=true,north=true,south=true,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_dunmer:block/table_small"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/drawer",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/drawer",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/drawer"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/drawer"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/drawer",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/drawer",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/drawer",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/drawer",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "east=false,north=false,south=false,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_nordic:block/table"
+    },
+    "east=false,north=false,south=false,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_w"
+    },
+    "east=false,north=false,south=false,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_nordic:block/table"
+    },
+    "east=false,north=false,south=false,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_w"
+    },
+    "east=false,north=false,south=true,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_s"
+    },
+    "east=false,north=false,south=true,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_sw"
+    },
+    "east=false,north=false,south=true,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_s"
+    },
+    "east=false,north=false,south=true,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_sw"
+    },
+    "east=false,north=true,south=false,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_n"
+    },
+    "east=false,north=true,south=false,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_nw"
+    },
+    "east=false,north=true,south=false,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_n"
+    },
+    "east=false,north=true,south=false,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_nw"
+    },
+    "east=false,north=true,south=true,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_ns"
+    },
+    "east=false,north=true,south=true,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_nsw"
+    },
+    "east=false,north=true,south=true,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_ns"
+    },
+    "east=false,north=true,south=true,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_nsw"
+    },
+    "east=true,north=false,south=false,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_e"
+    },
+    "east=true,north=false,south=false,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_ew"
+    },
+    "east=true,north=false,south=false,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_e"
+    },
+    "east=true,north=false,south=false,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_ew"
+    },
+    "east=true,north=false,south=true,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_es"
+    },
+    "east=true,north=false,south=true,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_esw"
+    },
+    "east=true,north=false,south=true,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_es"
+    },
+    "east=true,north=false,south=true,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_esw"
+    },
+    "east=true,north=true,south=false,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_ne"
+    },
+    "east=true,north=true,south=false,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_new"
+    },
+    "east=true,north=true,south=false,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_ne"
+    },
+    "east=true,north=true,south=false,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_new"
+    },
+    "east=true,north=true,south=true,waterlogged=false,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_nes"
+    },
+    "east=true,north=true,south=true,waterlogged=false,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_nesw"
+    },
+    "east=true,north=true,south=true,waterlogged=true,west=false": {
+      "model": "fantasyfurniture_nordic:block/table_nes"
+    },
+    "east=true,north=true,south=true,waterlogged=true,west=true": {
+      "model": "fantasyfurniture_nordic:block/table_nesw"
+    }
+  }
+}

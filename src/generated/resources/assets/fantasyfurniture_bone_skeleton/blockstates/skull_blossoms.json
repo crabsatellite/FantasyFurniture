@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/skull_blossoms"
+    },
+    "facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/skull_blossoms"
+    },
+    "facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/skull_blossoms"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/skull_blossoms"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/skull_blossoms"
+    },
+    "facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/skull_blossoms"
+    },
+    "facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/skull_blossoms"
+    },
+    "facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/skull_blossoms"
+    }
+  }
+}

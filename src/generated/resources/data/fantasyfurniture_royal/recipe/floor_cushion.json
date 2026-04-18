@@ -1,0 +1,14 @@
+{
+  "type": "fantasyfurniture:furniture_station",
+  "group": "furniture_set/royal",
+  "ingredientA": {
+    "item": "minecraft:quartz_block"
+  },
+  "ingredientB": {
+    "item": "minecraft:red_wool"
+  },
+  "result": {
+    "count": 1,
+    "id": "fantasyfurniture_royal:floor_cushion"
+  }
+}

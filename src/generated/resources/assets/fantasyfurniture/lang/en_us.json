@@ -1,0 +1,11 @@
+{
+  "block.fantasyfurniture.furniture_station": "Furniture Station",
+  "container.fantasyfurniture.bookshelf": "Bookshelf",
+  "container.fantasyfurniture.furnace": "Oven",
+  "container.fantasyfurniture.furniture_station": "Furniture Station",
+  "container.fantasyfurniture.large_container": "Large Container",
+  "container.fantasyfurniture.medium_container": "Medium Container",
+  "container.fantasyfurniture.small_container": "Small Container",
+  "entity.fantasyfurniture.seat": "Seat",
+  "itemGroup.fantasyfurniture": "Fantasy's Furniture"
+}

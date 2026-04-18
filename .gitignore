@@ -21,8 +21,9 @@ build
 # other
 run
 
-# Ignore generated files
-**/generated/**
+# Keep datagen output (src/generated/resources/) tracked except for cache metadata.
+# build/generated/ is already covered by the `build` rule above.
+src/generated/resources/.cache/
 /changelogs
 
 # Ignore compiled jars

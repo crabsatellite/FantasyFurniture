@@ -1,0 +1,14 @@
+{
+  "type": "fantasyfurniture:furniture_station",
+  "group": "furniture_set/nordic",
+  "ingredientA": {
+    "item": "minecraft:oak_planks"
+  },
+  "ingredientB": {
+    "item": "minecraft:brown_wool"
+  },
+  "result": {
+    "count": 1,
+    "id": "fantasyfurniture_nordic:bookshelf"
+  }
+}

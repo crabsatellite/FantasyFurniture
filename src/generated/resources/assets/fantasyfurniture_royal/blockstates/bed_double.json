@@ -1,0 +1,244 @@
+{
+  "variants": {
+    "facing=east,occupied=false,part=0,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=0,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=1,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=1,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=2,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=2,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=3,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=3,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=0,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=0,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=1,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=1,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=2,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=2,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=3,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=3,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 90
+    },
+    "facing=north,occupied=false,part=0,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/bed_double"
+    },
+    "facing=north,occupied=false,part=0,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/bed_double"
+    },
+    "facing=north,occupied=false,part=1,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=false,part=1,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=false,part=2,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=false,part=2,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=false,part=3,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=false,part=3,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=true,part=0,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/bed_double"
+    },
+    "facing=north,occupied=true,part=0,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/bed_double"
+    },
+    "facing=north,occupied=true,part=1,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=true,part=1,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=true,part=2,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=true,part=2,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=true,part=3,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=north,occupied=true,part=3,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part"
+    },
+    "facing=south,occupied=false,part=0,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=0,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=1,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=1,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=2,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=2,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=3,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=3,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=0,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=0,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=1,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=1,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=2,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=2,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=3,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=3,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 180
+    },
+    "facing=west,occupied=false,part=0,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 270
+    },
+    "facing=west,occupied=false,part=0,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 270
+    },
+    "facing=west,occupied=false,part=1,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=false,part=1,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=false,part=2,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=false,part=2,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=false,part=3,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=false,part=3,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=true,part=0,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 270
+    },
+    "facing=west,occupied=true,part=0,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/bed_double",
+      "y": 270
+    },
+    "facing=west,occupied=true,part=1,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=true,part=1,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=true,part=2,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=true,part=2,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=true,part=3,waterlogged=false": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    },
+    "facing=west,occupied=true,part=3,waterlogged=true": {
+      "model": "fantasyfurniture_royal:block/empty_multiblock_part",
+      "y": 270
+    }
+  }
+}

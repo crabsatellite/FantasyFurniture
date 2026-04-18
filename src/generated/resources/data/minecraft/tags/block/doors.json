@@ -1,0 +1,18 @@
+{
+  "values": [
+    "fantasyfurniture_nordic:door_single",
+    "fantasyfurniture_nordic:door_double",
+    "fantasyfurniture_royal:door_single",
+    "fantasyfurniture_royal:door_double",
+    "fantasyfurniture_dunmer:door_single",
+    "fantasyfurniture_dunmer:door_double",
+    "fantasyfurniture_venthyr:door_single",
+    "fantasyfurniture_venthyr:door_double",
+    "fantasyfurniture_necrolord:door_single",
+    "fantasyfurniture_necrolord:door_double",
+    "fantasyfurniture_bone_skeleton:door_single",
+    "fantasyfurniture_bone_skeleton:door_double",
+    "fantasyfurniture_bone_wither:door_single",
+    "fantasyfurniture_bone_wither:door_double"
+  ]
+}

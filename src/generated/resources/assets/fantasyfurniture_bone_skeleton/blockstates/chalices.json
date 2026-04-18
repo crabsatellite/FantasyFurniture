@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "chalices=0,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_0",
+      "y": 90
+    },
+    "chalices=0,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_0",
+      "y": 90
+    },
+    "chalices=0,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_0"
+    },
+    "chalices=0,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_0"
+    },
+    "chalices=0,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_0",
+      "y": 180
+    },
+    "chalices=0,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_0",
+      "y": 180
+    },
+    "chalices=0,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_0",
+      "y": 270
+    },
+    "chalices=0,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_0",
+      "y": 270
+    },
+    "chalices=1,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_1",
+      "y": 90
+    },
+    "chalices=1,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_1",
+      "y": 90
+    },
+    "chalices=1,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_1"
+    },
+    "chalices=1,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_1"
+    },
+    "chalices=1,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_1",
+      "y": 180
+    },
+    "chalices=1,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_1",
+      "y": 180
+    },
+    "chalices=1,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_1",
+      "y": 270
+    },
+    "chalices=1,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_1",
+      "y": 270
+    },
+    "chalices=2,facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_2",
+      "y": 90
+    },
+    "chalices=2,facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_2",
+      "y": 90
+    },
+    "chalices=2,facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_2"
+    },
+    "chalices=2,facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_2"
+    },
+    "chalices=2,facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_2",
+      "y": 180
+    },
+    "chalices=2,facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_2",
+      "y": 180
+    },
+    "chalices=2,facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_2",
+      "y": 270
+    },
+    "chalices=2,facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_bone_skeleton:block/decorations/chalices_2",
+      "y": 270
+    }
+  }
+}

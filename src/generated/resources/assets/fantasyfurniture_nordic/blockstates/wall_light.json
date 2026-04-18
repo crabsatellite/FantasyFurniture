@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/wall_light",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/wall_light",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/wall_light"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/wall_light"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/wall_light",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/wall_light",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "fantasyfurniture_nordic:block/wall_light",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "fantasyfurniture_nordic:block/wall_light",
+      "y": 270
+    }
+  }
+}
