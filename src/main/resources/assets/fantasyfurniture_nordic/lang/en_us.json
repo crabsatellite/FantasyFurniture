@@ -5,6 +5,8 @@
   "block.fantasyfurniture_nordic.floor_light": "Nordic Floor Light",
   "block.fantasyfurniture_nordic.chandelier": "Nordic Chandelier",
   "block.fantasyfurniture_nordic.table": "Nordic Table",
+  "block.fantasyfurniture_nordic.table_wide": "Nordic Table (Wide)",
+  "block.fantasyfurniture_nordic.table_large": "Nordic Table (Large)",
   "block.fantasyfurniture_nordic.chair": "Nordic Chair",
   "block.fantasyfurniture_nordic.bench": "Nordic Bench",
   "block.fantasyfurniture_nordic.stool": "Nordic Stool",
@@ -27,5 +29,10 @@
   "block.fantasyfurniture_nordic.door_double": "Nordic Door (Double)",
   "block.fantasyfurniture_nordic.painting_small": "Nordic Painting (Small)",
   "block.fantasyfurniture_nordic.painting_wide": "Nordic Painting (Wide)",
-  "block.fantasyfurniture_nordic.oven": "Nordic Oven"
+  "block.fantasyfurniture_nordic.oven": "Nordic Oven",
+  "block.fantasyfurniture_nordic.boiled_creme_treats": "Nordic Boiled Creme Treats",
+  "block.fantasyfurniture_nordic.sweetrolls": "Nordic Sweet Rolls",
+  "block.fantasyfurniture_nordic.mead_bottles": "Nordic Mead Bottles",
+  "block.fantasyfurniture_nordic.soul_gems_light": "Nordic Soul Gems (Light)",
+  "block.fantasyfurniture_nordic.soul_gems_dark": "Nordic Soul Gems (Dark)"
 }

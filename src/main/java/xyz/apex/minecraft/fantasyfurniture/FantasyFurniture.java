@@ -16,6 +16,10 @@ import xyz.apex.minecraft.fantasyfurniture.client.screen.SmallContainerScreen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.apex.minecraft.fantasyfurniture.client.renderer.NoopEntityRenderer;
+import xyz.apex.minecraft.fantasyfurniture.client.renderer.SkullBlossomsBlockEntityRenderer;
+import xyz.apex.minecraft.fantasyfurniture.client.renderer.WidowBloomBlockEntityRenderer;
+import xyz.apex.minecraft.fantasyfurniture.client.renderer.model.SkullBlossomsModel;
+import xyz.apex.minecraft.fantasyfurniture.client.renderer.model.WidowBloomModel;
 import xyz.apex.minecraft.fantasyfurniture.registry.ModBlockEntities;
 import xyz.apex.minecraft.fantasyfurniture.registry.ModBlocks;
 import xyz.apex.minecraft.fantasyfurniture.registry.ModCreativeTabs;
@@ -27,9 +31,17 @@ import xyz.apex.minecraft.fantasyfurniture.registry.ModRecipeTypes;
 @Mod(FantasyFurniture.MOD_ID)
 public class FantasyFurniture {
     public static final String MOD_ID = "fantasyfurniture";
-    // Nordic submodule namespace — kept separate from MOD_ID so existing 1.20.x
-    // worlds can load their fantasyfurniture_nordic:* blocks unchanged.
-    public static final String NORDIC_ID = "fantasyfurniture_nordic";
+    // Per-set namespaces. Each FurnitureSet owns its own mod id so existing
+    // 1.20.x worlds load unchanged (Nordic) and the remaining sets follow the
+    // same pattern. These string constants exist for backwards-reference; new
+    // code should prefer FurnitureSet#namespace().
+    public static final String NORDIC_ID = FurnitureSet.NORDIC.namespace();
+    public static final String ROYAL_ID = FurnitureSet.ROYAL.namespace();
+    public static final String VENTHYR_ID = FurnitureSet.VENTHYR.namespace();
+    public static final String DUNMER_ID = FurnitureSet.DUNMER.namespace();
+    public static final String NECROLORD_ID = FurnitureSet.NECROLORD.namespace();
+    public static final String BONE_SKELETON_ID = FurnitureSet.BONE_SKELETON.namespace();
+    public static final String BONE_WITHER_ID = FurnitureSet.BONE_WITHER.namespace();
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     public FantasyFurniture(IEventBus modEventBus) {
@@ -37,10 +49,23 @@ public class FantasyFurniture {
 
         ModBlocks.BLOCKS.register(modEventBus);
         ModBlocks.NORDIC_BLOCKS.register(modEventBus);
+        ModBlocks.ROYAL_BLOCKS.register(modEventBus);
+        ModBlocks.VENTHYR_BLOCKS.register(modEventBus);
+        ModBlocks.DUNMER_BLOCKS.register(modEventBus);
+        ModBlocks.NECROLORD_BLOCKS.register(modEventBus);
+        ModBlocks.BONE_SKELETON_BLOCKS.register(modEventBus);
+        ModBlocks.BONE_WITHER_BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModItems.NORDIC_ITEMS.register(modEventBus);
+        ModItems.ROYAL_ITEMS.register(modEventBus);
+        ModItems.VENTHYR_ITEMS.register(modEventBus);
+        ModItems.DUNMER_ITEMS.register(modEventBus);
+        ModItems.NECROLORD_ITEMS.register(modEventBus);
+        ModItems.BONE_SKELETON_ITEMS.register(modEventBus);
+        ModItems.BONE_WITHER_ITEMS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITY_TYPES.register(modEventBus);
         ModBlockEntities.NORDIC_BLOCK_ENTITY_TYPES.register(modEventBus);
+        modEventBus.addListener(this::registerLayerDefinitions);
         ModMenuTypes.MENU_TYPES.register(modEventBus);
         ModRecipeTypes.RECIPE_TYPES.register(modEventBus);
         ModRecipeTypes.RECIPE_SERIALIZERS.register(modEventBus);
@@ -67,6 +92,13 @@ public class FantasyFurniture {
 
     private void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.SEAT.get(), NoopEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.VENTHYR_WIDOW_BLOOM.get(), WidowBloomBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.BONE_SKULL_BLOSSOMS.get(), SkullBlossomsBlockEntityRenderer::new);
+    }
+
+    private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(WidowBloomModel.LAYER_LOCATION, WidowBloomModel::createBodyLayer);
+        event.registerLayerDefinition(SkullBlossomsModel.LAYER_LOCATION, SkullBlossomsModel::createBodyLayer);
     }
 
     private void registerCapabilities(RegisterCapabilitiesEvent event) {
