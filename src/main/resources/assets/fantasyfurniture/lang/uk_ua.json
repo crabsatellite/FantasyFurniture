@@ -1,11 +1,11 @@
 {
+  "itemGroup.fantasyfurniture": "Фантастичні меблі",
   "block.fantasyfurniture.furniture_station": "Меблевий станок",
   "entity.fantasyfurniture.seat": "Сидіння",
-  "itemGroup.fantasyfurniture": "Fantasy's Furniture",
-  "menu_type.fantasyfurniture.furniture_station": "Меблевий станок",
-  "menu_type.fantasyfurniture.large_container": "Великий контейнер",
-  "menu_type.fantasyfurniture.medium_container": "Середній контейнер",
-  "menu_type.fantasyfurniture.small_container": "Малий контейнер",
-  "pack.fantasyfurniture.description": "Fantasy's Furniture",
-  "recipe_type.fantasyfurniture.furniture_station": "Меблевий станок"
+  "container.fantasyfurniture.small_container": "Малий контейнер",
+  "container.fantasyfurniture.medium_container": "Середній контейнер",
+  "container.fantasyfurniture.large_container": "Великий контейнер",
+  "container.fantasyfurniture.bookshelf": "Книжкова полиця",
+  "container.fantasyfurniture.furnace": "Піч",
+  "container.fantasyfurniture.furniture_station": "Меблевий станок"
 }
