@@ -33,5 +33,17 @@ public class DataGenHandler {
 
         // Recipes
         generator.addProvider(event.includeServer(), new ModRecipeProvider(output, lookupProvider));
+
+        // Language files — one LanguageProvider per namespace, output to
+        // assets/<namespace>/lang/en_us.json. Community translations (uk_ua, zh_cn)
+        // remain hand-written under src/main/resources.
+        generator.addProvider(event.includeClient(), ModLanguageProvider.main(output));
+        generator.addProvider(event.includeClient(), ModLanguageProvider.nordic(output));
+        generator.addProvider(event.includeClient(), ModLanguageProvider.royal(output));
+        generator.addProvider(event.includeClient(), ModLanguageProvider.venthyr(output));
+        generator.addProvider(event.includeClient(), ModLanguageProvider.dunmer(output));
+        generator.addProvider(event.includeClient(), ModLanguageProvider.necrolord(output));
+        generator.addProvider(event.includeClient(), ModLanguageProvider.boneSkeleton(output));
+        generator.addProvider(event.includeClient(), ModLanguageProvider.boneWither(output));
     }
 }
